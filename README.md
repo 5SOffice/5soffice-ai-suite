@@ -67,6 +67,6 @@ Docs-first foundation is in place. Next steps focus on:
 
 See: `docs/10-products/roadmap-highlevel.md`
 
-## Project lead
+## Origin & project lead
 
-This initiative is led by **Nguyễn Đăng Quang**, overseeing product direction, governance alignment (ISO/IEC 42001), and delivery quality.
+**Nguyễn Đăng Quang** conceived the initial idea for 5SOffice AI Suite and leads the project end-to-end, including product direction, AI governance (ISO/IEC 42001), and quality control of architecture decisions (ADRs).
