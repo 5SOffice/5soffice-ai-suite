@@ -1,0 +1,10 @@
+# Default owner for everything in this repository
+* @YOUR_GITHUB_USERNAME
+
+# Docs governance and architecture are owned by the project lead
+docs/ @YOUR_GITHUB_USERNAME
+docs/adr/ @YOUR_GITHUB_USERNAME
+docs/30-aims-iso42001/ @YOUR_GITHUB_USERNAME
+
+# (Optional) Keep workflow/repo meta under lead ownership
+.github/ @YOUR_GITHUB_USERNAME
