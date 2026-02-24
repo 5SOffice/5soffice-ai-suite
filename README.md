@@ -67,6 +67,45 @@ Docs-first foundation is in place. Next steps focus on:
 
 See: `docs/10-products/roadmap-highlevel.md`
 
+## Documentation index
+
+### Overview
+- Vision: `docs/00-overview/vision.md`
+- Target customers: `docs/00-overview/target-customers.md`
+- Differentiation: `docs/00-overview/differentiation.md`
+- Glossary: `docs/00-overview/glossary.md`
+- Contributing & workflow: `docs/00-overview/contributing-workflow.md`
+- (Optional) Project leadership: `docs/00-overview/project-leadership.md`
+
+### Product
+- Modules overview (8 projects): `docs/10-products/projects-overview.md`
+- Roadmap (high-level): `docs/10-products/roadmap-highlevel.md`
+- Pricing & packaging (hypothesis): `docs/10-products/pricing-packaging.md`
+
+### Architecture
+- Infrastructure sizing / deployment notes: `docs/20-architecture/infra.md`
+
+### AIMS (ISO/IEC 42001)
+- AI use case inventory: `docs/30-aims-iso42001/ai-use-cases.md`
+- Transparency & user disclosures: `docs/30-aims-iso42001/transparency-user-disclosures.md`
+- Human oversight policy: `docs/30-aims-iso42001/human-oversight.md`
+
+### ADRs
+- ADR-0001 Tenancy isolation: `docs/adr/ADR-0001-tenancy-isolation.md`
+- ADR-0002 Knowledge sources & RAG: `docs/adr/ADR-0002-knowledge-sources-rag.md`
+- ADR-0003 Logging & audit trail: `docs/adr/ADR-0003-logging-audit-trail.md`
+- ADR-0004 Model selection & prompt versioning: `docs/adr/ADR-0004-model-selection-prompt-versioning.md`
+
+### Security & Privacy
+- Security baseline: `docs/40-security-privacy/security-baseline.md`
+- Privacy baseline: `docs/40-security-privacy/privacy-baseline.md`
+- Threat modeling: `docs/40-security-privacy/threat-modeling.md`
+
+### Operations
+- Environments: `docs/50-operations/environments.md`
+- Runbooks: `docs/50-operations/runbooks.md`
+- SLA/SLO (pilot baseline): `docs/50-operations/sla-slo.md`
+
 ## Origin & project lead
 
 **Nguyễn Đăng Quang** conceived the initial idea for 5SOffice AI Suite and leads the project end-to-end, including product direction, AI governance (ISO/IEC 42001), and quality control of architecture decisions (ADRs).
