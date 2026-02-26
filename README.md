@@ -108,4 +108,4 @@ See: `docs/10-products/roadmap-highlevel.md`
 
 ## Origin & project lead
 
-**Nguyễn Đăng Quang** conceived the initial idea for 5SOffice AI Suite and leads the project end-to-end, including product direction, AI governance (ISO/IEC 42001), and quality control of architecture decisions (ADRs).
+**Nguyễn Đăng Quang Lead Auditor ISO/IEC27001, LA ISO/IEC27701, LA ISO/IEC42001** conceived the initial idea for 5SOffice AI Suite and leads the project end-to-end, including product direction, AI governance (ISO/IEC 42001), and quality control of architecture decisions (ADRs).
