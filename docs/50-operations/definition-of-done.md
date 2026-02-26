@@ -1,52 +1,65 @@
 # Definition of Done (DoD)
 
 This DoD defines minimum completion criteria for changes in this repo.
-It prevents incomplete or unsafe implementations—especially for AI features.
+It helps prevent incomplete or unsafe implementations—especially for AI features.
 
 ---
 
-## 1) Docs changes (docs/*)
+## 1) Docs changes (`docs/*`)
+
 Done means:
-- content is readable (headings/sections, no broken formatting)
-- links work
-- changes align with ADRs and AIMS policies where relevant
+
+- Markdown is readable (proper headings/sections, no broken formatting)
+- Links work (no 404 paths)
+- Content aligns with ADRs and AIMS policies where relevant
+- README documentation index updated when new key docs are added (when applicable)
 
 ---
 
-## 2) Code changes (apps/*, packages/*)
+## 2) Code changes (`apps/*`, `packages/*`)
+
 Done means:
-- builds successfully
-- basic tests pass (unit/integration as available)
-- no secrets committed
-- tenant isolation respected (ADR-0001)
-- logging/audit trail considered (ADR-0003)
-- rollback plan stated (even if simple)
+
+- Build succeeds
+- Basic tests pass (unit/integration as available)
+- No secrets committed (keys/tokens/passwords)
+- Tenant isolation is respected (ADR-0001)
+- Logging/audit trail fields are considered (ADR-0003)
+- Rollback plan is stated (even if simple)
 
 ---
 
 ## 3) AI feature changes (user-facing)
+
 Done means:
-- transparency disclosures implemented (AI-assisted indicator)
-- high-impact domains (Legal/Finance/HR):
-  - show sources and effective dates (Legal)
-  - include limitation statements
-  - enforce human oversight and escalation path
-- prompt injection risk considered (retrieved content treated as untrusted)
-- prompt/model versioning updated and documented (ADR-0004)
-- audit metadata captured (ADR-0003)
+
+- AI-assisted indicator is visible (transparency)
+- High-impact domains (**Legal/Finance/HR**) enforce:
+  - Sources + effective dates (Legal)
+  - Limitation statement (Legal: “general guidance, not legal advice”)
+  - Human oversight and escalation path (AIMS policy)
+- Prompt injection risk considered:
+  - Retrieved content treated as **untrusted input**
+  - System policies cannot be overridden by document text
+- Prompt/model versioning updated when prompts change (ADR-0004)
+- Audit metadata captured for high-impact outputs (ADR-0003)
 
 ---
 
 ## 4) Data / DB changes
+
 Done means:
-- migrations are included and reversible (where feasible)
-- backup/restore impact considered
-- tenant scoping is verified for new tables/queries
+
+- Migrations included (and reversible where feasible)
+- Backup/restore impact considered
+- New tables/queries are tenant-scoped and verified
 
 ---
 
 ## 5) Pilot readiness checklist (staging)
+
 Done means:
-- environment variables documented (docs/50-operations/environments.md)
-- runbook updated if operational behavior changes
+
+- Environment variables documented (docs/50-operations/environments.md)
+- Runbook updated if operational steps changed (docs/50-operations/runbooks.md)
 - SLO impact considered (docs/50-operations/sla-slo.md)
