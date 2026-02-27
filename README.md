@@ -83,6 +83,7 @@ See: `docs/10-products/roadmap-highlevel.md`
 - Pricing & packaging (hypothesis): `docs/10-products/pricing-packaging.md`
 
 ### Architecture
+- Tech stack (Hybrid): `docs/20-architecture/tech-stack.md`
 - Infrastructure sizing / deployment notes: `docs/20-architecture/infra.md`
 
 ### AIMS (ISO/IEC 42001)
@@ -105,7 +106,8 @@ See: `docs/10-products/roadmap-highlevel.md`
 - Environments: `docs/50-operations/environments.md`
 - Runbooks: `docs/50-operations/runbooks.md`
 - SLA/SLO (pilot baseline): `docs/50-operations/sla-slo.md`
+- Definition of Done (DoD): `docs/50-operations/definition-of-done.md`
 
 ## Origin & project lead
 
-**Nguyễn Đăng Quang Lead Auditor ISO/IEC27001, LA ISO/IEC27701, LA ISO/IEC42001** conceived the initial idea for 5SOffice AI Suite and leads the project end-to-end, including product direction, AI governance (ISO/IEC 42001), and quality control of architecture decisions (ADRs).
+**Nguyễn Đăng Quang** conceived the initial idea for 5SOffice AI Suite and leads the project end-to-end, including product direction, AI governance (ISO/IEC 42001), and quality control of architecture decisions (ADRs).
