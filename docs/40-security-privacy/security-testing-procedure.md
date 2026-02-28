@@ -1,6 +1,7 @@
 # Security Testing Procedure (DEV & Acceptance) — ISO/IEC 27001:2022 A.8.29
 
-Purpose: Define how security testing is performed during development and acceptance to reduce vulnerabilities before release.
+Purpose: Define how security testing is performed during development and acceptance to reduce
+vulnerabilities before release.
 
 Scope:
 - Applies to all code changes in this repository once code is introduced (`apps/*`, `packages/*`).
@@ -16,6 +17,7 @@ References:
 ## 1) Testing layers
 
 ### 1.1 Developer checks (local)
+
 Required for meaningful changes:
 - Unit tests for business logic and edge cases
 - Basic lint/type checks
@@ -25,6 +27,7 @@ Required for meaningful changes:
   - input validation
 
 ### 1.2 CI checks (recommended minimum)
+
 Run automatically on PR:
 - Lint / formatting
 - Unit tests
@@ -32,6 +35,7 @@ Run automatically on PR:
 - Secret scanning (prevent accidental key commits)
 
 ### 1.3 Security-specific checks (as we mature)
+
 - SAST (static analysis)
 - DAST (lightweight) for staging endpoints
 - Container image scanning (optional later)
@@ -41,6 +45,7 @@ Run automatically on PR:
 ## 2) What must be tested (minimum)
 
 ### 2.1 Tenant isolation (critical)
+
 - Every request must be scoped by `tenant_id`
 - Retrieval/RAG must not cross tenant indexes
 - Any data access must be tenant filtered
@@ -50,17 +55,20 @@ Minimum tests:
 - Validate tenant A cannot retrieve tenant B data (API + RAG queries)
 
 ### 2.2 Authentication & authorization
+
 - RBAC rules enforced server-side
 - Admin endpoints protected and logged
 - Privilege escalation attempts fail
 
 ### 2.3 Input validation & injection
+
 - Validate request payloads
 - Prevent SQL injection (parameterized queries)
 - Prevent XSS in UI rendering
 - Handle SSRF risk if fetching external URLs
 
 ### 2.4 Logging & auditability (high-impact outputs)
+
 - Ensure required audit metadata is captured (ADR-0003)
 - Ensure logs do not contain secrets or unnecessary personal data
 
@@ -84,11 +92,13 @@ Minimum acceptance checklist:
 ## 4) Vulnerability handling
 
 ### 4.1 Severity guide (pilot)
+
 - Critical: cross-tenant leakage, unauthorized admin access, secret exposure
 - High: high-impact hallucination leading to material risk, auth bypass attempt
 - Medium/Low: minor issues without direct exploitation
 
 ### 4.2 Remediation workflow
+
 - Log finding (issue/ticket)
 - Assign owner + due date
 - Fix + add regression test where relevant
