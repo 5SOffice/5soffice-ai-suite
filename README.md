@@ -1,113 +1,126 @@
 # 5SOffice AI Suite
 
-**5SOffice AI Suite** is a multi-tenant AI SaaS suite for **SMEs in Vietnam** using serviced offices / coworking.  
-It combines workspace services with AI-driven **operations**, **compliance**, and **growth** tools.
+**AI agents and digital services for SME tenants.**
 
-## What we build
+5SOffice AI Suite is being repositioned from a broad collection of eight standalone AI applications into a shared, multi-tenant **AI Agent capability platform** for SMEs using 5SOffice and related business services.
 
-A modular suite (8 modules) designed for SME reality (limited HR/Finance/Legal capacity):
+The project is designed to work with:
 
-1. **AI Meeting Scheduler & Optimizer** — scheduling + room booking with calendar integrations  
-2. **AI Document Management & Automation** — OCR classification and workflow automation  
-3. **AI HR Assistant** — CV screening assistance + onboarding workflows  
-4. **AI Office Analytics & Predictive Maintenance** — usage insights + predictive maintenance  
-5. **AI Content & Marketing Generator** — Vietnamese-first marketing content and campaign support  
-6. **AI Customer Support Chatbot (Chat/Voice)** — internal/tenant support automation  
-7. **AI Expense Tracker & Financial Insights** — receipt OCR + budgeting and forecasting  
-8. **AI Legal Compliance Tracker & Advisor** — regulatory tracking, explainable impact, proactive alerts
+- **5SOffice Webapp** as the customer and tenant channel;
+- **Special AI Customer Service Cockpit** as the AI orchestration, guardrail, approval and administration layer;
+- **5SOffice Voucher & AI Credit Engine** as the entitlement, quota and redemption layer;
+- **HQC AI / AIMS governance assets** for governance, evidence and expert escalation.
 
-See: `docs/10-products/projects-overview.md`
+## Product direction
 
-## Why it matters
+```text
+5SOffice Webapp / Tenant Portal
+              |
+              v
+Special AI Customer Service Cockpit
+        (AI Orchestrator)
+              |
+   +----------+----------+----------------+
+   |          |          |                |
+Office     Admin     Compliance        Growth
+Agent      Agent       Agent            Agent
+   |          |          |                |
+   +----------+----------+----------------+
+              |
+    Shared Agent Capability Platform
+              |
+ Knowledge / Tools / Approval / Audit / Usage
+              |
+ Voucher & AI Credit Engine / Business APIs
+```
 
-SMEs often run lean and face:
-- heavy admin workload
-- unclear legal/compliance obligations
-- limited HR/Finance capacity
-- slow execution due to manual processes
+## Agent portfolio
 
-This suite reduces operational friction, improves compliance safety, and enables growth — within a secure, isolated multi-tenant platform.
+### 1. 5SOffice Tenant Agent — first MVP
 
-## Governance (ISO/IEC 42001-aligned)
+The first production target. It assists tenants and customers with:
 
-This repository follows **AI governance principles aligned with ISO/IEC 42001 (AIMS)**:
-- Bias & fairness awareness (especially HR use cases)
-- Transparency & explainability (citations/effective dates for high-impact outputs)
-- Human oversight & escalation paths (Legal/Finance/HR)
-- Privacy & multi-tenant data isolation
-- Accountability (logging/audit trail)
-- Monitoring & continuous improvement
+- service and policy questions;
+- meeting-room and workspace availability;
+- booking requests;
+- reception and operational requests;
+- voucher and AI-credit balance checks;
+- voucher redemption;
+- meeting summaries and basic administrative outputs;
+- escalation to sales, support or reception staff.
 
-Key docs:
-- Transparency: `docs/30-aims-iso42001/transparency-user-disclosures.md`
-- Human oversight: `docs/30-aims-iso42001/human-oversight.md`
-- AI use cases: `docs/30-aims-iso42001/ai-use-cases.md`
+### 2. SME Administrative Agent
 
-## Architecture decisions (ADRs)
+Creates and manages common SME administrative work products, including meeting minutes, notices, payment requests, onboarding packs, document classification and deadline reminders.
 
-We keep architectural decisions explicit and versioned:
-- Tenant isolation: `docs/adr/ADR-0001-tenancy-isolation.md`
-- Knowledge sources & RAG: `docs/adr/ADR-0002-knowledge-sources-rag.md`
-- Logging & audit trail: `docs/adr/ADR-0003-logging-audit-trail.md`
-- Model selection & prompt versioning: `docs/adr/ADR-0004-model-selection-prompt-versioning.md`
+### 3. SME Compliance Agent
 
-## Repository structure
+Supports structured compliance and ISO-readiness workflows, including intake, gap checklists, implementation plans, evidence requests and expert escalation. High-impact or professional conclusions always require human review.
 
-- `docs/` — vision, product docs, governance (AIMS), architecture notes  
-- `docs/adr/` — Architectural Decision Records  
-- `apps/` — applications (created after pilot spec)  
-- `packages/` — shared libraries (created after pilot)
+### 4. SME Growth Agent
+
+Executes repeatable marketing workflows rather than only generating isolated text: campaign briefs, channel plans, content reuse, publication schedules and performance follow-up.
+
+### 5. SME Management Agent — later phase
+
+Produces management summaries and decision queues from authorized business data. This capability requires broader integrations and is not part of the first MVP.
+
+## Shared platform capabilities
+
+Every agent must use common platform services:
+
+- tenant workspace and tenant isolation;
+- identity, role and permission checks;
+- knowledge sources and RAG with source metadata;
+- tool registry and action authorization;
+- human approval for consequential actions;
+- immutable-enough audit and evidence records;
+- prompt, model and policy versioning;
+- usage metering, quotas and billing integration;
+- safety, privacy and escalation controls.
+
+## MVP scope
+
+The first MVP is **5SOffice Tenant Agent**, limited to a small set of reliable end-to-end journeys:
+
+1. answer 5SOffice service and policy questions;
+2. find an appropriate meeting room or workspace;
+3. create a booking request after explicit confirmation;
+4. create a reception/support request;
+5. check and redeem eligible vouchers or credits;
+6. generate a meeting summary from user-provided content;
+7. transfer the conversation to a human operator.
+
+See:
+
+- `docs/00-overview/product-direction-v2.md`
+- `docs/10-products/agent-portfolio.md`
+- `docs/10-products/mvp-tenant-agent.md`
+- `docs/20-architecture/target-architecture-v2.md`
+- `docs/20-architecture/integration-contracts.md`
+- `docs/30-aims-iso42001/agent-governance-baseline.md`
+- `docs/60-roadmap/implementation-roadmap-v2.md`
 
 ## Current stage
 
-Docs-first foundation is in place. Next steps focus on:
-- roadmap/prioritization
-- pilot specification (recommended pilot: Legal Compliance)
-- MVP build and tenant rollout
+This repository remains docs-first. The next milestone is an approved MVP specification and API contract, followed by a thin vertical slice connected to the Webapp and Customer Service Cockpit.
 
-See: `docs/10-products/roadmap-highlevel.md`
+## Non-goals
 
-## Documentation index
+- Building eight independent SaaS products at the same time.
+- Replacing the Customer Service Cockpit orchestration layer.
+- Giving agents unrestricted access to tenant systems.
+- Autonomous legal, financial, HR or compliance decisions.
+- Building a generic chatbot without business actions and evidence.
 
-### Overview
-- Vision: `docs/00-overview/vision.md`
-- Target customers: `docs/00-overview/target-customers.md`
-- Differentiation: `docs/00-overview/differentiation.md`
-- Glossary: `docs/00-overview/glossary.md`
-- Contributing & workflow: `docs/00-overview/contributing-workflow.md`
-- (Optional) Project leadership: `docs/00-overview/project-leadership.md`
+## Governance
 
-### Product
-- Modules overview (8 projects): `docs/10-products/projects-overview.md`
-- Roadmap (high-level): `docs/10-products/roadmap-highlevel.md`
-- Pricing & packaging (hypothesis): `docs/10-products/pricing-packaging.md`
+The platform follows ISO/IEC 42001-aligned principles: accountability, human oversight, traceability, risk-based controls, transparency, data protection and continual improvement. Alignment does not by itself constitute certification or conformity.
 
-### Architecture
-- Tech stack (Hybrid): `docs/20-architecture/tech-stack.md`
-- Infrastructure sizing / deployment notes: `docs/20-architecture/infra.md`
+## Project owner
 
-### AIMS (ISO/IEC 42001)
-- AI use case inventory: `docs/30-aims-iso42001/ai-use-cases.md`
-- Transparency & user disclosures: `docs/30-aims-iso42001/transparency-user-disclosures.md`
-- Human oversight policy: `docs/30-aims-iso42001/human-oversight.md`
+**Nguyễn Đăng Quang** — Project Owner and Concept Creator; responsible for product direction, AI governance and quality review.
 
-### ADRs
-- ADR-0001 Tenancy isolation: `docs/adr/ADR-0001-tenancy-isolation.md`
-- ADR-0002 Knowledge sources & RAG: `docs/adr/ADR-0002-knowledge-sources-rag.md`
-- ADR-0003 Logging & audit trail: `docs/adr/ADR-0003-logging-audit-trail.md`
-- ADR-0004 Model selection & prompt versioning: `docs/adr/ADR-0004-model-selection-prompt-versioning.md`
+## License
 
-### Security & Privacy
-- Security baseline: `docs/40-security-privacy/security-baseline.md`
-- Privacy baseline: `docs/40-security-privacy/privacy-baseline.md`
-- Threat modeling: `docs/40-security-privacy/threat-modeling.md`
-
-### Operations
-- Environments: `docs/50-operations/environments.md`
-- Runbooks: `docs/50-operations/runbooks.md`
-- SLA/SLO (pilot baseline): `docs/50-operations/sla-slo.md`
-- Definition of Done (DoD): `docs/50-operations/definition-of-done.md`
-
-## Origin & project lead
-
-**Nguyễn Đăng Quang, Lead Auditor ISO/IEC27001 - ISO/IEC42001 - ISO/IEC27701** conceived the initial idea for 5SOffice AI Suite and leads the project end-to-end, including product direction, AI governance (ISO/IEC 42001), and quality control of architecture decisions (ADRs).
+Retain the existing repository license unless the project owner approves a change.
